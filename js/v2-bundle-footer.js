@@ -548,7 +548,7 @@ p=/^([\-+])=\s*(\d+\.?\d*)/,t=[{re:/rgba?\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\
     var div = document.createElement('div'),
         ref = document.getElementsByTagName('base')[0] || document.getElementsByTagName('script')[0];
 
-    div.className = 'fit-vids-style';
+    
     div.innerHTML = '&shy;<style>         \
       .fluid-width-video-wrapper {        \
          width: 100%;                     \
@@ -1983,7 +1983,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
 	});
 	
 	//change h5 class for custom footer
-	$(".bim-custom-footer div[class*='elementor-widget-wp-'] h5").each(function() {
+	$(".noithat-custom-footer div[class*='elementor-widget-wp-'] h5").each(function() {
 		$(this).addClass("elementor-heading-title");
 	});
 	
@@ -1992,16 +1992,16 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
 	
 	//adding/removing sticky menu class
 	$('.stuck-nav').on('sticky-start', function() {
-		$(this).addClass('bim-sticky-menu');
-		$(this).find('.bim-nav,.mobile-wrapper').addClass('bim-stick')
+		$(this).addClass('noithat-sticky-menu');
+		$(this).find('.noithat-nav,.mobile-wrapper').addClass('noithat-stick')
 	});
 	$('.stuck-nav').on('sticky-end', function() {
-		$(this).removeClass('bim-sticky-menu');
-		$(this).find('.bim-nav,.mobile-wrapper').removeClass('bim-stick')
+		$(this).removeClass('noithat-sticky-menu');
+		$(this).find('.noithat-nav,.mobile-wrapper').removeClass('noithat-stick')
 	});
 	
 	//add class for hovering team & hovering icon
-	$('.elementor-widget-bim-team-hover,.elementor-widget-bim-texticon-hover').each(function() {
+	$('.elementor-widget-noithat-team-hover,.elementor-widget-noithat-texticon-hover').each(function() {
 		$(this).closest('.elementor-column-wrap').addClass('hovering');
 	});
 
@@ -2106,7 +2106,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
 	var $animation_elements = $('.sentence .elementor-heading-title span');
 	var $window = $(window);
 
-	function Bim_check_if_in_view() {
+	function NoiThat_check_if_in_view() {
 	  var window_height = $window.height();
 	  var window_top_position = $window.scrollTop();
 	  var window_bottom_position = (window_top_position + window_height);
@@ -2125,7 +2125,7 @@ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":false},"autoA11y":{"ena
 	  });
 	}
 
-	$window.on('scroll resize', Bim_check_if_in_view);
+	$window.on('scroll resize', NoiThat_check_if_in_view);
 	$window.trigger('scroll');
 	//------------------------------------------------------------------------------------------//
 })(jQuery);
@@ -2250,11 +2250,11 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 
 
 		//slider for home slider 
+		try { $('.home-slider').slick('unslick'); } catch(e) {}
 		$('.home-slider').slick({
 			autoplay: true,
 			dots: true,
-			nextArrow: '<i class="fa fa-angle-right"></i>',
-			prevArrow: '<i class="fa fa-angle-left"></i>',
+			arrows: false,
 			speed: 1000,
 			fade: true,
 			pauseOnHover: false,
