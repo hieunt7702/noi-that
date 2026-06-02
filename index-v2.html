@@ -821,8 +821,21 @@
         opacity: 0.8;
         transform: translateX(5px);
     }
-        </style>
-</head>
+        
+    /* Force Hamburger icon to be bright white */
+    .hamburger__icon, 
+    .hamburger__icon::before, 
+    .hamburger__icon::after {
+        background-color: #ffffff !important;
+        box-shadow: 0 0 2px rgba(255, 255, 255, 0.5) !important;
+    }
+    .hamburger:hover .hamburger__icon, 
+    .hamburger:hover .hamburger__icon::before, 
+    .hamburger:hover .hamburger__icon::after {
+        background-color: #ce9e51 !important;
+    }
+    </style>
+    </head>
 
 <body id="top" class="home page-template page-template-blank-builder page-template-blank-builder-php page page-id-2643 theme-noithat woocommerce-js elementor-default elementor-kit-3257 elementor-page elementor-page-2643 e--ua-blink e--ua-chrome e--ua-webkit overflow-x-hidden" data-elementor-device-mode="widescreen" cz-shortcut-listen="true">
 
